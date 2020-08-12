@@ -1,0 +1,45 @@
+<window id="addEditDlg" width="30%"
+	viewModel="@id('vm') @init('bg.verbo.footind.web.vm.edit.AddEditConfederationVM')">
+
+	<grid sclass="modal_grid menu_background_color">
+		<columns>
+			<column />
+			<column />
+			<column hflex="min" />
+		</columns>
+		<rows>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.name}" style="display: block;" />
+					</hlayout>
+					<textbox width="100%" value="@bind(vm.addEditObject.name)" maxlength="32" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.founded}" style="display: block;" />
+					</hlayout>
+					<intbox width="100%" value="@bind(vm.addEditObject.founded)" maxlength="4" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.headquarters}" style="display: block;" />
+					</hlayout>
+					<textbox width="100%" value="@bind(vm.addEditObject.headquarters)" maxlength="64" />
+				</cell>
+			</row>
+			<row>
+				<cell align="center">
+					<label value="${labels.cancel }" onClick="@command('cancel')" />
+				</cell>
+				<cell align="right">
+					<button label="${labels.save }"	onClick="@command('save')" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</window>

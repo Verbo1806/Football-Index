@@ -1,0 +1,52 @@
+<window id="addEditDlg" width="30%"
+	viewModel="@id('vm') @init('bg.verbo.footind.web.vm.edit.EditUserVM')">
+
+	<grid sclass="modal_grid menu_background_color">
+		<columns>
+			<column />
+			<column />
+			<column hflex="min" />
+		</columns>
+		<rows>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.username}" style="display: block;" />
+					</hlayout>
+					<textbox width="100%" value="@bind(vm.addEditObject.username)" maxlength="32" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.authorities}" style="display: block;" />
+					</hlayout>
+					<bandbox readonly="true"
+						width="200pt" value="@load(vm.displaySelectedAuthorities())">
+						<bandpopup width="200pt">
+							<listbox
+								model="@load(vm.authorities)" selectedItems="@bind(vm.addEditObject.authorities)" 
+								multiple="true" checkmark="true"
+								fixedLayout="true">
+								<template name="model">
+									<listitem onClick="@command('selectAuthority')">
+										<listcell
+											label="@load(each.authority)" />
+									</listitem>
+								</template>
+							</listbox>
+						</bandpopup>
+					</bandbox>
+				</cell>
+			</row>
+			<row>
+				<cell align="center">
+					<label value="${labels.cancel }" onClick="@command('cancel')" />
+				</cell>
+				<cell align="right">
+					<button label="${labels.save }"	onClick="@command('save')" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</window>

@@ -1,0 +1,34 @@
+/* ########## GLOBAL ########## */
+:root {
+	 /* Main Colors */
+	--main-bg-color:	#F5F5F5;
+	
+	/* Icon Colors */
+	--icon-color:	 #3465A4;
+	
+	--settings-bg-color: #DADEE6;
+	
+	--important-cells-color: #627788;
+}
+
+/* ########## HTML Components ########## */
+body {
+	background-color: var(--main-bg-color);
+}
+
+input[type="checkbox"] {
+	font-family: ZK85Icons,FontAwesome !important;
+}
+
+.z-north {
+	left: var(--west-size) !important;
+	width: 100% !important;
+}
+
+.z-west {
+	top: 0 !important;
+}
+
+.z-north-body {
+	width: calc(100% - var(--west-size)) !important;
+}

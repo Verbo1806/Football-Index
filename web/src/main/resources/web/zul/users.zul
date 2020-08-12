@@ -1,0 +1,23 @@
+<vlayout viewModel="@id('vm') @init('bg.verbo.footind.web.vm.UsersVM')" vflex="1" hflex="1">
+
+	<listbox model="@load(vm.users)" mold="paging" pageSize="10">
+		<listhead>
+          	<listheader label="${labels.username }" hflex="5" />
+          	<listheader label="${labels.password }" hflex="5" />
+          	<listheader hflex="1" />
+       	</listhead>
+        <template name="model">
+           	<listitem>
+        		<listcell>
+        			<label value="@load(each.username)" />
+        		</listcell>
+        		<listcell>
+        			<label sclass="icon icon-locked" />
+        		</listcell>
+        		<listcell>
+        			<label sclass="icon icon-edit" tooltiptext="${labels.edit }" onClick="@command('addEdit', object=each)" />
+        		</listcell>
+            </listitem>
+        </template>
+	</listbox>
+</vlayout>

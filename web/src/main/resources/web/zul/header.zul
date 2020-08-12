@@ -1,0 +1,4 @@
+<div sclass="settings_menu_parent">
+	<label value="@load(vm.profileName)" />
+	<label value="logout" onClick="@command('logout')" />
+</div>

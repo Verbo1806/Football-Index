@@ -1,0 +1,22 @@
+<?page title="${labels.appName }" contentType="text/html;charset=UTF-8"?>
+
+<?import bg.verbo.footind.web.config.Config?>
+
+<zk>
+<!-- INCLUDE CUSTOM CSS -->
+<style src="~./style/zk-components.css"></style>
+<style src="~./style/zul-style.css"></style>
+
+<borderlayout viewModel="@id('vm') @init('bg.verbo.footind.web.vm.IndexVM')" height="100%" width="100%">
+	
+	<north sclass="settings_container" height="40pt">
+		<include src="~./zul/header.zul"/>
+	</north>
+	
+	<west sclass="menu_container menu_background_color" width="250pt" border="none">
+		<include src="~./zul/nav-menu.zul" />
+	</west>
+	
+	<center id="centerContent" sclass="main_container" border="none" />
+</borderlayout>
+</zk>

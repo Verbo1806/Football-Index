@@ -1,0 +1,55 @@
+<vlayout viewModel="@id('vm') @init('bg.verbo.footind.web.vm.CountriesVM')" vflex="1" hflex="1">
+
+	<grid sclass="display_grid">
+		<columns>
+			<column hflex="3" />
+			<column hflex="3" />
+			<column hflex="2" />
+			<column hflex="2" />
+			<column hflex="2" />
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="${labels.code }:" style="display: block;"/>
+					<textbox value="@bind(vm.searchObject.code)" maxlength="3" />
+				</cell>
+				<cell>
+					<label value="${labels.name }:" style="display: block;"/>
+					<textbox value="@bind(vm.searchObject.name)" maxlength="64" />
+				</cell>
+				<cell>
+					<button label="${labels.search }" onClick="@command('search')" />
+				</cell>
+				<cell>
+					<button label="${labels.clear }" onClick="@command('clear')" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+
+	<listbox model="@load(vm.countries)" mold="paging" pageSize="10">
+		<listhead>
+          	<listheader label="${labels.code }" hflex="1" />
+          	<listheader label="${labels.name }" hflex="3" />
+          	<listheader label="${labels.description }" hflex="5" />
+          	<listheader hflex="1" />
+       	</listhead>
+        <template name="model">
+           	<listitem>
+        		<listcell>
+        			<label value="@load(each.code)" />
+        		</listcell>
+        		<listcell>
+        			<label value="@load(each.name)" />
+        		</listcell>
+        		<listcell>
+        			<label value="@load(each.description)" />
+        		</listcell>
+        		<listcell>
+        			<label sclass="icon icon-edit" tooltiptext="${labels.edit }" onClick="@command('addEdit', object=each)" />
+        		</listcell>
+            </listitem>
+        </template>
+	</listbox>
+</vlayout>

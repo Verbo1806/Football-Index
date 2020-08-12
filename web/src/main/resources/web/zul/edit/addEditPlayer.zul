@@ -1,0 +1,58 @@
+<window id="addEditDlg" width="30%"
+	viewModel="@id('vm') @init('bg.verbo.footind.web.vm.edit.AddEditPlayerVM')">
+
+	<grid sclass="modal_grid menu_background_color">
+		<columns>
+			<column />
+			<column />
+			<column hflex="min" />
+		</columns>
+		<rows>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.name}" style="display: block;" />
+					</hlayout>
+					<textbox width="100%" value="@bind(vm.addEditObject.fullName)" maxlength="32" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.shirtNumber}" style="display: block;" />
+					</hlayout>
+					<intbox width="100%" value="@bind(vm.addEditObject.shirtNumber)" maxlength="2" constraint="no negative" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.bornAt}" style="display: block;" />
+					</hlayout>
+					<datebox width="100%" value="@bind(vm.addEditObject.bornAt)" constraint="no future" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hlayout>
+						<label value="${labels.team}" style="display: block;" />
+					</hlayout>
+					<combobox model="@load(vm.teams)" width="100%"
+						selectedItem="@bind(vm.addEditObject.team)">
+						<template name="model">
+							<comboitem value="@load(each)" label="@load(each.name)" />
+						</template>
+					</combobox>
+				</cell>
+			</row>
+			<row>
+				<cell align="center">
+					<label value="${labels.cancel }" onClick="@command('cancel')" />
+				</cell>
+				<cell align="right">
+					<button label="${labels.save }"	onClick="@command('save')" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</window>

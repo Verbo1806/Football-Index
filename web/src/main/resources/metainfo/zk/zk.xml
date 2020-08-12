@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<zk>
+	<config-name>Football Index Web</config-name>
+	
+	<preference>
+		<name>org.zkoss.zk.ui.WebApp.name</name>
+		<value>Football Index Web</value>
+	</preference>
+</zk>

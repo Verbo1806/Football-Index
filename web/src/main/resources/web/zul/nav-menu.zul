@@ -1,0 +1,55 @@
+<vlayout>
+	<vlayout width="100%" height="100%">
+		<grid sclass="nav_menu">
+			<columns>
+				<column />
+			</columns>
+			<rows>
+				<!-- Logo -->
+				<row sclass="menu_logo">
+					<cell><image src="${Config.ICON_LOGO}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='teams')">
+					<cell><label value="${labels.teams}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='leagues')">
+					<cell><label value="${labels.leagues}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='players')">
+					<cell><label value="${labels.players}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='confederations')">
+					<cell><label value="${labels.confederations}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='grounds')">
+					<cell><label value="${labels.grounds}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='countries')">
+					<cell><label value="${labels.countries}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='surfaces')">
+					<cell><label value="${labels.surfaces}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='competitionTypes')">
+					<cell><label value="${labels.competitionTypes}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='stadiumCategories')">
+					<cell><label value="${labels.stadiumCategories}" /></cell>
+				</row>
+				
+				<row onClick="@global-command('changeCenterContent', zulName='users')">
+					<cell><label value="${labels.users}" /></cell>
+				</row>
+			</rows>
+		</grid>
+	</vlayout>
+</vlayout>
