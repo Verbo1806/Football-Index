@@ -1,5 +1,6 @@
 package bg.verbo.footind.web.http;
 
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +21,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class GenericRequests<T> {
 	
-	private RestTemplate template;
+	private final RestTemplate template;
+	private final Class<T> modelClass;
 
 	public ResponseEntity<List<T>> findAll(String url) {
 		HttpHeaders headers = new HttpHeaders();
@@ -30,7 +32,12 @@ public class GenericRequests<T> {
 				url,
 		        HttpMethod.GET,
 		        new HttpEntity<>(null, headers),
-		        new ParameterizedTypeReference<List<T>>() {}
+		        new ParameterizedTypeReference<List<T>>() {
+					@Override
+					public Type getType() {
+						return modelClass;
+					}
+				}
 		    );
 	}
 	
